@@ -15,13 +15,16 @@ const HomeScreen = () => {
     // }, [])
 
     return (
-        <SafeAreaView style={Platform.OS === "android" && { marginTop: StatusBar.currentHeight }}>
-            <View style={{ backgroundColor: "white", padding: 10, }}>
-                <Header />
-                <Search />
-            </View>
+        <SafeAreaView style={Platform.OS === "android" && { marginTop: StatusBar.currentHeight }} >
+            <View style={Platform.OS == "web" && { maxWidth: 1024, justifyContent: "center" }}>
 
-            <Body />
+                <View style={{ backgroundColor: "white", padding: 10 }}>
+                    <Header />
+                    <Search />
+                </View>
+
+                <Body />
+            </View>
 
         </SafeAreaView >
     )
